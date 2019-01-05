@@ -2,6 +2,7 @@ FROM golang:alpine as builder
 RUN mkdir /build 
 ADD . /build/
 WORKDIR /build 
+RUN apk add --no-cache git
 RUN go get github.com/gorilla/websocket
 RUN go get github.com/shirou/w32
 RUN go get github.com/araujobsd/bhyve-vm-goagent/plugins
