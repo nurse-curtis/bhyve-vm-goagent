@@ -16,4 +16,4 @@ RUN adduser -S -D -H -h /app bhyve-guest
 USER bhyve-guest
 COPY --from=builder /build/bhyve-vm-goagent-linux-amd64 /app/
 WORKDIR /app
-CMD ["./bhyve-vm-goagent-linux-amd64 -websocket -ipaddr='0.0.0.0' -port=9191"]
+CMD ["./bhyve-vm-goagent-linux-amd64 -virtio"]
